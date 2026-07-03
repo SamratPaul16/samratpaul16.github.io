@@ -6,14 +6,15 @@
     <title>Dr. Samrat Paul | Plant Pathology & AI Research Portfolio</title>
     <style>
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #2563eb;
-            --text-dark: #1f2937;
-            --text-light: #4b5563;
-            --bg-site: #f1f5f9; /* Soothed professional slate-tint background */
+            --primary-color: #1a2a4a;      /* deep navy — authority, academic */
+            --secondary-color: #2f5d8a;    /* steel blue — links, secondary emphasis */
+            --text-dark: #202430;
+            --text-light: #5c6472;
+            --bg-site: #eef1ee;            /* soft sage-slate background */
             --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --accent-color: #0d9488;
+            --border-color: #dde3df;
+            --accent-color: #9c6b1f;       /* muted gold — botanical/academic accent */
+            --accent-teal: #0f6e64;        /* secondary accent for timeline markers */
         }
 
         * {
@@ -26,7 +27,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-dark);
             background-color: var(--bg-site);
-            line-height: 1.6;
+            line-height: 1.65;
             display: flex;
             min-height: 100vh;
         }
@@ -55,7 +56,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.02);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.03);
             animation: fadeInSidebar 0.8s ease-out forwards;
         }
 
@@ -74,7 +75,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 14px rgba(26, 42, 74, 0.15);
             margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
         }
@@ -84,19 +85,20 @@
         }
 
         h1 {
-            font-size: 1.75rem;
+            font-family: Georgia, 'Cambria', 'Times New Roman', serif;
+            font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 0.25rem;
             font-weight: 700;
         }
 
         .title-sub {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--accent-color);
             font-weight: 600;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
         }
 
         .contact-info {
@@ -136,7 +138,7 @@
             transition: background 0.2s, transform 0.2s;
             width: 100%;
             margin-top: auto;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 4px 10px rgba(26, 42, 74, 0.18);
         }
 
         .btn-cv:hover {
@@ -151,16 +153,17 @@
             border-radius: 12px;
             margin-bottom: 2.5rem;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 4px 6px rgba(26, 42, 74, 0.02);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         section:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 8px 16px rgba(26, 42, 74, 0.05);
         }
 
         h2 {
+            font-family: Georgia, 'Cambria', 'Times New Roman', serif;
             color: var(--primary-color);
             font-size: 1.5rem;
             border-bottom: 2px solid var(--border-color);
@@ -201,12 +204,12 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: var(--accent-color);
+            background-color: var(--accent-teal);
             transition: background-color 0.2s;
         }
 
         .timeline-item:hover::before {
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
         }
 
         .timeline-header {
@@ -225,7 +228,7 @@
         .timeline-date {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--accent-color);
+            color: var(--accent-teal);
             white-space: nowrap;
         }
 
@@ -266,7 +269,7 @@
 
         .tag {
             display: inline-block;
-            background-color: #f1f5f9;
+            background-color: #eef1ee;
             color: var(--text-dark);
             padding: 0.15rem 0.5rem;
             border-radius: 4px;
@@ -276,8 +279,8 @@
             border: 1px solid var(--border-color);
         }
 
-        .tag-review { background-color: #fef3c7; color: #92400e; border-color: #fde68a; }
-        .tag-patent { background-color: #ccfbf1; color: #115e59; border-color: #99f6e4; }
+        .tag-review { background-color: #fdf1de; color: #8a5a10; border-color: #f3ddb3; }
+        .tag-patent { background-color: #e2f2ef; color: #0f6e64; border-color: #bfe3dc; }
 
         /* Technical Skills Matrix */
         .skills-grid {
@@ -287,16 +290,16 @@
         }
 
         .skill-card {
-            background-color: #fafafa;
+            background-color: #fafbfa;
             border: 1px solid var(--border-color);
             padding: 1.2rem;
             border-radius: 8px;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, border-color 0.2s;
         }
 
         .skill-card:hover {
-            background-color: #fcfcfc;
-            border-color: #cbd5e1;
+            background-color: #ffffff;
+            border-color: var(--secondary-color);
         }
 
         .skill-card h3 {
@@ -359,7 +362,7 @@
         <!-- RESEARCH OVERVIEW -->
         <section id="about">
             <h2>Research Overview</h2>
-            <p>My Ph.D. research develops minimally invasive, AI-powered diagnostic protocols for plant disease surveillance, specializing in multiclass disease detection and pixel-level severity quantification through advanced image segmentation[cite: 1]. I integrate deep learning architectures (e.g., YOLO, MobileNet, SAM) with attention-based enhancements for real-time field deployment, achieving simultaneous detection, symptom discrimination, and severity estimation while reducing manual assessment time by 12-fold[cite: 1]. By combining thermal imaging for pre-symptomatic detection, RGB-based mobile disease indexing, CRISPR diagnostics, and epidemiological modeling, my work establishes non-destructive monitoring frameworks that bridge laboratory precision with scalable field implementation for sustainable, chemical-free management of plant pathogens[cite: 1].</p>
+            <p>My Ph.D. research develops minimally invasive, AI-powered diagnostic protocols for plant disease surveillance, specializing in multiclass disease detection and pixel-level severity quantification through advanced image segmentation. I integrate deep learning architectures (e.g., YOLO, MobileNet, SAM) with attention-based enhancements for real-time field deployment, achieving simultaneous detection, symptom discrimination, and severity estimation while reducing manual assessment time by 12-fold. By combining thermal imaging for pre-symptomatic detection, RGB-based mobile disease indexing, CRISPR diagnostics, and epidemiological modeling, my work establishes non-destructive monitoring frameworks that bridge laboratory precision with scalable field implementation for sustainable, chemical-free management of plant pathogens.</p>
         </section>
 
         <!-- EDUCATION -->
@@ -371,11 +374,11 @@
                     <span class="timeline-title">PhD in Plant Pathology</span>
                     <span class="timeline-date">2021 — 2026</span>
                 </div>
-                <div class="timeline-institution">Indian Agricultural Research Institute (IARI), New Delhi[cite: 1]</div>
+                <div class="timeline-institution">Indian Agricultural Research Institute (IARI), New Delhi</div>
                 <ul class="timeline-details">
-                    <li>Awarded February 13, 2026[cite: 1]</li>
-                    <li><strong>Dissertation:</strong> "Assessment of leaf curl infection risk in relation to host-vector interaction: aiming at the development of strategic management options"[cite: 1]</li>
-                    <li><strong>Committee:</strong> Parimal Sinha (Chair), Anirban Roy, Matiyar Rahaman Khan, Arpita Srivastava, Suresh Nebapure[cite: 1]</li>
+                    <li>Awarded February 13, 2026</li>
+                    <li><strong>Dissertation:</strong> "Assessment of leaf curl infection risk in relation to host-vector interaction: aiming at the development of strategic management options"</li>
+                    <li><strong>Committee:</strong> Parimal Sinha (Chair), Anirban Roy, Matiyar Rahaman Khan, Arpita Srivastava, Suresh Nebapure</li>
                 </ul>
             </div>
 
@@ -384,7 +387,7 @@
                     <span class="timeline-title">MSc in Plant Pathology</span>
                     <span class="timeline-date">2019 — 2021</span>
                 </div>
-                <div class="timeline-institution">Bidhan Chandra Krishi Viswavidyalaya (BCKV), Mohanpur, WB[cite: 1]</div>
+                <div class="timeline-institution">Bidhan Chandra Krishi Viswavidyalaya (BCKV), Mohanpur, WB</div>
             </div>
 
             <div class="timeline-item">
@@ -392,7 +395,7 @@
                     <span class="timeline-title">BSc in Agriculture</span>
                     <span class="timeline-date">2015 — 2019</span>
                 </div>
-                <div class="timeline-institution">Uttarbanga Krishi Viswavidyalaya, Pundibari, WB[cite: 1]</div>
+                <div class="timeline-institution">Uttarbanga Krishi Viswavidyalaya, Pundibari, WB</div>
             </div>
         </section>
 
@@ -401,39 +404,39 @@
             <h2>Peer-Reviewed Publications</h2>
             <ul class="pub-list">
                 <li class="pub-item">
-                    <strong>Paul, S.</strong>, Emmadi, V., Sarkar, M., Das, S., Roy, A., & Sinha, P. (2025). SCA-MobiPlant: smartphone-deployed multistage attention fusion model for accurate field detection of chili leaf curl complex. <em>Plant Methods</em>, 21(1), 138. <a href="https://doi.org/10.1186/s13007-025-01453-x" target="_blank">DOI</a>[cite: 1]
+                    <strong>Paul, S.</strong>, Emmadi, V., Sarkar, M., Das, S., Roy, A., & Sinha, P. (2025). SCA-MobiPlant: smartphone-deployed multistage attention fusion model for accurate field detection of chili leaf curl complex. <em>Plant Methods</em>, 21(1), 138. <a href="https://doi.org/10.1186/s13007-025-01453-x" target="_blank">DOI</a>
                 </li>
                 <li class="pub-item">
-                    <strong>Paul, S.</strong>, Das, S., Khan, M. R., Srivastava, A., Nebapure, S., Roy, A., & Sinha, P. (2025). YOLOv9t-DyE: A lightweight detection framework with SAM-assisted segmentation for quantifying chilli leaf curl complex. <em>Smart Agricultural Technology</em>, 6, Article 101764. <a href="https://doi.org/10.1016/j.atech.2025.101764" target="_blank">DOI</a>[cite: 1]
+                    <strong>Paul, S.</strong>, Das, S., Khan, M. R., Srivastava, A., Nebapure, S., Roy, A., & Sinha, P. (2025). YOLOv9t-DyE: A lightweight detection framework with SAM-assisted segmentation for quantifying chilli leaf curl complex. <em>Smart Agricultural Technology</em>, 6, Article 101764. <a href="https://doi.org/10.1016/j.atech.2025.101764" target="_blank">DOI</a>
                 </li>
                 <li class="pub-item">
-                    <strong>Paul, S.</strong>, Emmadi, V., Saxena, S., Sarkar, M., Mandal, B., Kumar, R., ... & Roy, A. (2025). RPA-assisted CRISPR-Cas12a-Enabled Point-of-Care Diagnostic Platform for Chilli Leaf Curl Virus with Fluorescent and Colorimetric Readouts. <em>Frontiers in Microbiology</em>, 16, 1644322. <a href="https://doi.org/10.3389/fmicb.2025.1644322" target="_blank">DOI</a>[cite: 1]
+                    <strong>Paul, S.</strong>, Emmadi, V., Saxena, S., Sarkar, M., Mandal, B., Kumar, R., ... & Roy, A. (2025). RPA-assisted CRISPR-Cas12a-Enabled Point-of-Care Diagnostic Platform for Chilli Leaf Curl Virus with Fluorescent and Colorimetric Readouts. <em>Frontiers in Microbiology</em>, 16, 1644322. <a href="https://doi.org/10.3389/fmicb.2025.1644322" target="_blank">DOI</a>
                 </li>
                 <li class="pub-item">
-                    Chavan, D. D., <strong>Paul, S.</strong>, Thapa, P., Madival, S. D., Sharma, S. K., Saha, S., ... & Roy, A. (2025). Integrated Transcriptomics and Targeted Metabolomics Delineate the Mechanisms of MYMIV Resistance in Soybean Via Regulation of Isoflavonoid Biosynthesis, Hormone Signalling, and RNA Silencing Pathways. <em>Journal of Plant Growth Regulation</em>, 1-24. <a href="https://doi.org/10.1007/s00344-025-11992-1" target="_blank">DOI</a>[cite: 1]
+                    Chavan, D. D., <strong>Paul, S.</strong>, Thapa, P., Madival, S. D., Sharma, S. K., Saha, S., ... & Roy, A. (2025). Integrated Transcriptomics and Targeted Metabolomics Delineate the Mechanisms of MYMIV Resistance in Soybean Via Regulation of Isoflavonoid Biosynthesis, Hormone Signalling, and RNA Silencing Pathways. <em>Journal of Plant Growth Regulation</em>, 1-24. <a href="https://doi.org/10.1007/s00344-025-11992-1" target="_blank">DOI</a>
                 </li>
                 <li class="pub-item">
-                    Sarkar, M., Gupta, D., Singh, O. W., <strong>Paul, S.</strong>, Kumar, R., Mandal, B., & Roy, A. (2024). Identification of pathogenicity determinants in ToLCNDV and their RNAi-based knockdown for disease management in Nicotiana benthamiana and tomato plants. <em>Frontiers in Microbiology</em>, 15, 1481523. <a href="https://doi.org/10.3389/fmicb.2024.1481523" target="_blank">DOI</a>[cite: 1]
+                    Sarkar, M., Gupta, D., Singh, O. W., <strong>Paul, S.</strong>, Kumar, R., Mandal, B., & Roy, A. (2024). Identification of pathogenicity determinants in ToLCNDV and their RNAi-based knockdown for disease management in Nicotiana benthamiana and tomato plants. <em>Frontiers in Microbiology</em>, 15, 1481523. <a href="https://doi.org/10.3389/fmicb.2024.1481523" target="_blank">DOI</a>
                 </li>
             </ul>
 
             <h3>Manuscripts In Review / Preprints</h3>
             <ul class="pub-list" style="margin-top: 1rem;">
                 <li class="pub-item">
-                    Das, B., Venu, E., Ramya, A., Vimalkumar, C., Sathiyaseelan, K., <strong>Paul, S.</strong>, Roy, A., & Sinha, P. Geospatial modeling and risk prediction of chili leaf curl disease in India under changing climatic conditions. <em>Discover Applied Sciences</em> (Springer Nature). <span class="tag tag-review">Under Review</span>[cite: 1]
+                    Das, B., Venu, E., Ramya, A., Vimalkumar, C., Sathiyaseelan, K., <strong>Paul, S.</strong>, Roy, A., & Sinha, P. Geospatial modeling and risk prediction of chili leaf curl disease in India under changing climatic conditions. <em>Discover Applied Sciences</em> (Springer Nature). <span class="tag tag-review">Under Review</span>
                 </li>
                 <li class="pub-item">
-                    Chavan, D. D., <strong>Paul, S.</strong>, Thapa, P., Madival, S. D., Sharma, S. K., Saha, S., ... Roy, A. (2026). Exploration of antioxidant and biochemical profile of Glycine max L. Merr. (soybean) in response to mungbean yellow mosaic India virus infection. <em>Journal of Plant Growth Regulation</em> (Springer Nature). <span class="tag tag-review">Under Review</span>[cite: 1]
+                    Chavan, D. D., <strong>Paul, S.</strong>, Thapa, P., Madival, S. D., Sharma, S. K., Saha, S., ... Roy, A. (2026). Exploration of antioxidant and biochemical profile of Glycine max L. Merr. (soybean) in response to mungbean yellow mosaic India virus infection. <em>Journal of Plant Growth Regulation</em> (Springer Nature). <span class="tag tag-review">Under Review</span>
                 </li>
             </ul>
 
             <h3>Patents & IPs</h3>
             <ul class="pub-list" style="margin-top: 1rem;">
                 <li class="pub-item">
-                    <strong>Patent Application filed (India, 2024):</strong> Roy, A., Sinha, P., Mandal, B., Paul, S., Emmadi, V., & Saxena, S. <em>A Rapid, Sensitive, Specific and Field Deployable Diagnostic Process For Chilli Leaf Curl Virus.</em> <span class="tag tag-patent">Patent Pending</span>[cite: 1]
+                    <strong>Patent Application filed (India, 2024):</strong> Roy, A., Sinha, P., Mandal, B., Paul, S., Emmadi, V., & Saxena, S. <em>A Rapid, Sensitive, Specific and Field Deployable Diagnostic Process For Chilli Leaf Curl Virus.</em> <span class="tag tag-patent">Patent Pending</span>
                 </li>
                 <li class="pub-item">
-                    <strong>Copyright Registration (2025):</strong> Paul, S., Roy, A., & Sinha, P. <em>Android Application: Digital surveillance system for monitoring leaf curl disease in Chilli.</em> <span class="tag tag-patent">Registered</span>[cite: 1]
+                    <strong>Copyright Registration (2025):</strong> Paul, S., Roy, A., & Sinha, P. <em>Android Application: Digital surveillance system for monitoring leaf curl disease in Chilli.</em> <span class="tag tag-patent">Registered</span>
                 </li>
             </ul>
         </section>
@@ -447,12 +450,12 @@
                     <span class="timeline-title">Doctoral Research Assistant</span>
                     <span class="timeline-date">2021 — 2026</span>
                 </div>
-                <div class="timeline-institution">Indian Agricultural Research Institute (IARI), Division of Plant Pathology[cite: 1]</div>
+                <div class="timeline-institution">Indian Agricultural Research Institute (IARI), Division of Plant Pathology</div>
                 <ul class="timeline-details">
-                    <li>Developed novel machine learning architectures for non-invasive disease surveillance: <strong>SCA-MobiPlant classifier</strong> and <strong>YOLOv9t-DyE object detector</strong> integrating MobileSAM for pixel-level severity quantification[cite: 1].</li>
-                    <li>Integrated thermal imaging for pre-symptomatic detection with SAM-based automated canopy segmentation, eliminating manual annotation bottlenecks in phenotyping workflows[cite: 1].</li>
-                    <li>Established epidemiological models using whitefly contact rate dynamics, identifying optimal physical barrier intervention periods[cite: 1].</li>
-                    <li>Engineered an RPA-CRISPR-Cas12a lateral flow assay for rapid ChiLCV detection from crude leaf extracts and deployed an integrated Android application for real-time field diagnostics[cite: 1].</li>
+                    <li>Developed novel machine learning architectures for non-invasive disease surveillance: <strong>SCA-MobiPlant classifier</strong> and <strong>YOLOv9t-DyE object detector</strong> integrating MobileSAM for pixel-level severity quantification.</li>
+                    <li>Integrated thermal imaging for pre-symptomatic detection with SAM-based automated canopy segmentation, eliminating manual annotation bottlenecks in phenotyping workflows.</li>
+                    <li>Established epidemiological models using whitefly contact rate dynamics, identifying optimal physical barrier intervention periods.</li>
+                    <li>Engineered an RPA-CRISPR-Cas12a lateral flow assay for rapid ChiLCV detection from crude leaf extracts and deployed an integrated Android application for real-time field diagnostics.</li>
                 </ul>
             </div>
 
@@ -461,10 +464,10 @@
                     <span class="timeline-title">Graduate Research Assistant (M.Sc.)</span>
                     <span class="timeline-date">2019 — 2021</span>
                 </div>
-                <div class="timeline-institution">Bidhan Chandra Krishi Viswavidyalaya (BCKV), Department of Plant Pathology[cite: 1]</div>
+                <div class="timeline-institution">Bidhan Chandra Krishi Viswavidyalaya (BCKV), Department of Plant Pathology</div>
                 <ul class="timeline-details">
-                    <li>Evaluated synergistic effects of <em>Bacillus subtilis</em> and <em>Pseudomonas aeruginosa</em> consortia on cowpea growth parameters, demonstrating enhanced root development and maximum nodulation[cite: 1].</li>
-                    <li>Established field efficacy of bacterial consortia for web blight suppression and optimized mass production protocols using nutrient-enriched organic substrates[cite: 1].</li>
+                    <li>Evaluated synergistic effects of <em>Bacillus subtilis</em> and <em>Pseudomonas aeruginosa</em> consortia on cowpea growth parameters, demonstrating enhanced root development and maximum nodulation.</li>
+                    <li>Established field efficacy of bacterial consortia for web blight suppression and optimized mass production protocols using nutrient-enriched organic substrates.</li>
                 </ul>
             </div>
         </section>
@@ -475,19 +478,19 @@
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>Molecular Diagnostics & Wet Lab</h3>
-                    <div class="skill-list">PCR, qPCR, RPA, CRISPR-Cas12a detection frameworks, ELISA, nucleic acid extraction (DNA/RNA), viral diagnostics, lateral flow development[cite: 1].</div>
+                    <div class="skill-list">PCR, qPCR, RPA, CRISPR-Cas12a detection frameworks, ELISA, nucleic acid extraction (DNA/RNA), viral diagnostics, lateral flow development.</div>
                 </div>
                 <div class="skill-card">
                     <h3>Machine Learning & CV</h3>
-                    <div class="skill-list">Deep learning (CNNs), object detection (YOLO architectures), semantic image segmentation (SAM), thermal image data processing, Android app deployment[cite: 1].</div>
+                    <div class="skill-list">Deep learning (CNNs), object detection (YOLO architectures), semantic image segmentation (SAM), thermal image data processing, Android app deployment.</div>
                 </div>
                 <div class="skill-card">
                     <h3>Computational Tools</h3>
-                    <div class="skill-list"><strong>Languages:</strong> Python, R<br><strong>Libraries:</strong> TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas, NumPy, Android Studio, Git/GitHub[cite: 1].</div>
+                    <div class="skill-list"><strong>Languages:</strong> Python, R<br><strong>Libraries:</strong> TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas, NumPy, Android Studio, Git/GitHub.</div>
                 </div>
                 <div class="skill-card">
                     <h3>Epidemiology & Fieldwork</h3>
-                    <div class="skill-list">Population dynamics, vector contact monitoring, multi-location field trials, disease severity scaling, host-pathogen-vector interaction modeling[cite: 1].</div>
+                    <div class="skill-list">Population dynamics, vector contact monitoring, multi-location field trials, disease severity scaling, host-pathogen-vector interaction modeling.</div>
                 </div>
             </div>
         </section>
@@ -496,10 +499,10 @@
         <section id="awards">
             <h2>Honors & Awards</h2>
             <ul class="timeline-details" style="margin-left: 1.5rem;">
-                <li style="margin-bottom: 0.75rem;"><strong>ICAR-IARI PhD Merit Medal Winner (2026)</strong> for outstanding doctoral research contributions[cite: 1].</li>
-                <li style="margin-bottom: 0.75rem;"><strong>Shashya Suraksha Best PhD Thesis Award (2026)</strong> awarded at the International Conference organized by AAPP & ISI, Kolkata[cite: 1].</li>
-                <li style="margin-bottom: 0.75rem;"><strong>Best Oral Presentation Award (2025)</strong>, ICMR & National Institute of Virology (VIROCON-2025), Nagpur[cite: 1].</li>
-                <li style="margin-bottom: 0.75rem;"><strong>Best Poster Presentation Award (2024)</strong>, Indian Phytopathological Society National Conference, ICAR-IISR, Lucknow[cite: 1].</li>
+                <li style="margin-bottom: 0.75rem;"><strong>ICAR-IARI PhD Merit Medal Winner (2026)</strong> for outstanding doctoral research contributions.</li>
+                <li style="margin-bottom: 0.75rem;"><strong>Shashya Suraksha Best PhD Thesis Award (2026)</strong> awarded at the International Conference organized by AAPP & ISI, Kolkata.</li>
+                <li style="margin-bottom: 0.75rem;"><strong>Best Oral Presentation Award (2025)</strong>, ICMR & National Institute of Virology (VIROCON-2025), Nagpur.</li>
+                <li style="margin-bottom: 0.75rem;"><strong>Best Poster Presentation Award (2024)</strong>, Indian Phytopathological Society National Conference, ICAR-IISR, Lucknow.</li>
             </ul>
         </section>
 
