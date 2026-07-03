@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Samrat Paul | Plant Pathology & AI Research Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --accent-color: #0d9488;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Sidebar Layout */
+        aside {
+            width: 320px;
+            background-color: var(--bg-light);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        main {
+            margin-left: 320px;
+            padding: 3rem 4rem;
+            max-width: 1000px;
+            width: calc(100% - 320px);
+        }
+
+        /* Profile Elements */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .title-sub {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            width: 100%;
+            text-align: left;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-cv {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .btn-cv:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Main Content Styling */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Timeline Card Design */
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+
+        .timeline-institution {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .timeline-details {
+            list-style-type: square;
+            margin-left: 1.25rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .timeline-details li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Publications */
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-item {
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .pub-item strong {
+            color: var(--text-dark);
+        }
+
+        .pub-tags {
+            margin-top: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .tag-review { background-color: #fef3c7; color: #92400e; border-color: #fde68a; }
+        .tag-patent { background-color: #ccfbf1; color: #115e59; border-color: #99f6e4; }
+
+        /* Technical Skills Matrix */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.25rem;
+        }
+
+        .skill-list {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 2rem;
+            }
+            main {
+                margin-left: 0;
+                width: 100%;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION & CONTACT PROFILE -->
+    <aside>
+        <img src="My passport photo gemini.png" alt="Dr. Samrat Paul" class="profile-img">
+        <h1>Samrat Paul, PhD</h1>
+        <div class="title-sub">Plant Pathology & AI Specialist</div>
+        
+        <div class="contact-info">
+            <div class="contact-item">📍 New Delhi, India</div>
+            <div class="contact-item">📧 <a href="mailto:samrat16.sp@gmail.com">samrat16.sp@gmail.com</a></div>
+            <div class="contact-item">📱 (+91) 9614946594</div>
+            <div class="contact-item">🌐 <a href="https://github.com/SamratPaul16" target="_blank">GitHub Portfolio</a></div>
+            <div class="contact-item">🆔 <a href="https://orcid.org/0009-0008-2203-7126" target="_blank">ORCID Record</a></div>
+        </div>
+
+        <a href="Samrat_Paul_CV.pdf" class="btn-cv" download>Download Full CV (PDF)</a>
+    </aside>
+
+    <!-- MAIN PORTFOLIO CONTENTS -->
+    <main>
+        
+        <!-- RESEARCH OVERVIEW -->
+        <section id="about">
+            <h2>Research Overview</h2>
+            <p>My Ph.D. research develops minimally invasive, AI-powered diagnostic protocols for plant disease surveillance, specializing in multiclass disease detection and pixel-level severity quantification through advanced image segmentation. I integrate deep learning architectures (e.g., YOLO, MobileNet, SAM) with attention-based enhancements for real-time field deployment, achieving simultaneous detection, symptom discrimination, and severity estimation while reducing manual assessment time by 12-fold. By combining thermal imaging for pre-symptomatic detection, RGB-based mobile disease indexing, CRISPR diagnostics, and epidemiological modeling, my work establishes non-destructive monitoring frameworks that bridge laboratory precision with scalable field implementation for sustainable, chemical-free management of plant pathogens.</p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">PhD in Plant Pathology</span>
+                    <span class="timeline-date">2021 — 2026</span>
+                </div>
+                <div class="timeline-institution">Indian Agricultural Research Institute (IARI), New Delhi</div>
+                <ul class="timeline-details">
+                    <li>Awarded February 13, 2026</li>
+                    <li><strong>Dissertation:</strong> Assessment of leaf curl infection risk in relation to host-vector interaction: aiming at the development of strategic management options</li>
+                    <li><strong>Committee:</strong> Parimal Sinha (Chair), Anirban Roy, Matiyar Rahaman Khan, Arpita Srivastava, Suresh Nebapure</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">MSc in Plant Pathology</span>
+                    <span class="timeline-date">2019 — 2021</span>
+                </div>
+                <div class="timeline-institution">Bidhan Chandra Krishi Viswavidyalaya (BCKV), Mohanpur, WB</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">BSc in Agriculture</span>
+                    <span class="timeline-date">2015 — 2019</span>
+                </div>
+                <div class="timeline-institution">Uttarbanga Krishi Viswavidyalaya, Pundibari, WB</div>
+            </div>
+        </section>
+
+        <!-- PEER-REVIEWED PUBLICATIONS -->
+        <section id="publications">
+            <h2>Peer-Reviewed Publications</h2>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <strong>Paul, S.</strong>, Emmadi, V., Sarkar, M., Das, S., Roy, A., & Sinha, P. (2025). SCA-MobiPlant: smartphone-deployed multistage attention fusion model for accurate field detection of chili leaf curl complex. <em>Plant Methods</em>, 21(1), 138. <a href="https://doi.org/10.1186/s13007-025-01453-x" target="_blank">DOI</a>
+                </li>
+                <li class="pub-item">
+                    <strong>Paul, S.</strong>, Das, S., Khan, M. R., Srivastava, A., Nebapure, S., Roy, A., & Sinha, P. (2025). YOLOv9t-DyE: A lightweight detection framework with SAM-assisted segmentation for quantifying chilli leaf curl complex. <em>Smart Agricultural Technology</em>, 6, Article 101764. <a href="https://doi.org/10.1016/j.atech.2025.101764" target="_blank">DOI</a>
+                </li>
+                <li class="pub-item">
+                    <strong>Paul, S.</strong>, Emmadi, V., Saxena, S., Sarkar, M., Mandal, B., Kumar, R., ... & Roy, A. (2025). RPA-assisted CRISPR-Cas12a-Enabled Point-of-Care Diagnostic Platform for Chilli Leaf Curl Virus with Fluorescent and Colorimetric Readouts. <em>Frontiers in Microbiology</em>, 16, 1644322. <a href="https://doi.org/10.3389/fmicb.2025.1644322" target="_blank">DOI</a>
+                </li>
+                <li class="pub-item">
+                    Chavan, D. D., <strong>Paul, S.</strong>, Thapa, P., Madival, S. D., Sharma, S. K., Saha, S., ... & Roy, A. (2025). Integrated Transcriptomics and Targeted Metabolomics Delineate the Mechanisms of MYMIV Resistance in Soybean Via Regulation of Isoflavonoid Biosynthesis, Hormone Signalling, and RNA Silencing Pathways. <em>Journal of Plant Growth Regulation</em>, 1-24. <a href="https://doi.org/10.1007/s00344-025-11992-1" target="_blank">DOI</a>
+                </li>
+                <li class="pub-item">
+                    Sarkar, M., Gupta, D., Singh, O. W., <strong>Paul, S.</strong>, Kumar, R., Mandal, B., & Roy, A. (2024). Identification of pathogenicity determinants in ToLCNDV and their RNAi-based knockdown for disease management in Nicotiana benthamiana and tomato plants. <em>Frontiers in Microbiology</em>, 15, 1481523. <a href="https://doi.org/10.3389/fmicb.2024.1481523" target="_blank">DOI</a>
+                </li>
+            </ul>
+
+            <h3>Manuscripts In Review / Preprints</h3>
+            <ul class="pub-list" style="margin-top: 1rem;">
+                <li class="pub-item">
+                    Das, B., Venu, E., Ramya, A., Vimalkumar, C., Sathiyaseelan, K., <strong>Paul, S.</strong>, Roy, A., & Sinha, P. Geospatial modeling and risk prediction of chili leaf curl disease in India under changing climatic conditions. <em>Discover Applied Sciences</em> (Springer Nature). <span class="tag tag-review">Under Review</span>
+                </li>
+                <li class="pub-item">
+                    Chavan, D. D., <strong>Paul, S.</strong>, Thapa, P., Madival, S. D., Sharma, S. K., Saha, S., ... Roy, A. (2026). Exploration of antioxidant and biochemical profile of Glycine max L. Merr. (soybean) in response to mungbean yellow mosaic India virus infection. <em>Journal of Plant Growth Regulation</em> (Springer Nature). <span class="tag tag-review">Under Review</span>
+                </li>
+            </ul>
+
+            <h3>Patents & IPs</h3>
+            <ul class="pub-list" style="margin-top: 1rem;">
+                <li class="pub-item">
+                    <strong>Patent Application filed (India, 2024):</strong> Roy, A., Sinha, P., Mandal, B., Paul, S., Emmadi, V., & Saxena, S. <em>A Rapid, Sensitive, Specific and Field Deployable Diagnostic Process For Chilli Leaf Curl Virus.</em> <span class="tag tag-patent">Patent Pending</span>
+                </li>
+                <li class="pub-item">
+                    <strong>Copyright Registration (2025):</strong> Paul, S., Roy, A., & Sinha, P. <em>Android Application: Digital surveillance system for monitoring leaf curl disease in Chilli.</em> <span class="tag tag-patent">Registered</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- WORK & RESEARCH EXPERIENCE -->
+        <section id="experience">
+            <h2>Research Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Doctoral Research Assistant</span>
+                    <span class="timeline-date">2021 — 2026</span>
+                </div>
+                <div class="timeline-institution">Indian Agricultural Research Institute (IARI), Division of Plant Pathology</div>
+                <ul class="timeline-details">
+                    <li>Developed novel machine learning architectures for non-invasive disease surveillance: <strong>SCA-MobiPlant classifier</strong> and <strong>YOLOv9t-DyE object detector</strong> integrating MobileSAM for pixel-level severity quantification.</li>
+                    <li>Integrated thermal imaging for pre-symptomatic detection with SAM-based automated canopy segmentation, eliminating manual annotation bottlenecks in phenotyping workflows.</li>
+                    <li>Established epidemiological models using whitefly contact rate dynamics, identifying optimal physical barrier intervention periods.</li>
+                    <li>Engineered an RPA-CRISPR-Cas12a lateral flow assay for rapid ChiLCV detection from crude leaf extracts and deployed an integrated Android application for real-time field diagnostics.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Graduate Research Assistant (M.Sc.)</span>
+                    <span class="timeline-date">2019 — 2021</span>
+                </div>
+                <div class="timeline-institution">Bidhan Chandra Krishi Viswavidyalaya (BCKV), Department of Plant Pathology</div>
+                <ul class="timeline-details">
+                    <li>Evaluated synergistic effects of <em>Bacillus subtilis</em> and <em>Pseudomonas aeruginosa</em> consortia on cowpea growth parameters, demonstrating enhanced root development and maximum nodulation.</li>
+                    <li>Established field efficacy of bacterial consortia for web blight suppression and optimized mass production protocols using nutrient-enriched organic substrates.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS MATRIX -->
+        <section id="skills">
+            <h2>Technical Skills Matrix</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Molecular Diagnostics & Wet Lab</h3>
+                    <div class="skill-list">PCR, qPCR, RPA, CRISPR-Cas12a detection frameworks, ELISA, nucleic acid extraction (DNA/RNA), viral diagnostics, lateral flow development.</div>
+                </div>
+                <div class="skill-card">
+                    <h3>Machine Learning & CV</h3>
+                    <div class="skill-list">Deep learning (CNNs), object detection (YOLO architectures), semantic image segmentation (SAM), thermal image data processing, Android app deployment.</div>
+                </div>
+                <div class="skill-card">
+                    <h3>Computational Tools</h3>
+                    <div class="skill-list"><strong>Languages:</strong> Python, R<br><strong>Libraries:</strong> TensorFlow, PyTorch, OpenCV, scikit-learn, Pandas, NumPy, Android Studio, Git/GitHub.</div>
+                </div>
+                <div class="skill-card">
+                    <h3>Epidemiology & Fieldwork</h3>
+                    <div class="skill-list">Population dynamics, vector contact monitoring, multi-location field trials, disease severity scaling, host-pathogen-vector interaction modeling.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HONORS & AWARDS -->
+        <section id="awards">
+            <h2>Honors & Awards</h2>
+            <ul class="timeline-details" style="margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.75rem;"><strong>ICAR-IARI PhD Merit Medal Winner (2026)</strong> for outstanding doctoral research contributions[cite: 1].</li>
+                <li style="margin-bottom: 0.75rem;"><strong>Shashya Suraksha Best PhD Thesis Award (2026)</strong> awarded at the International Conference organized by AAPP & ISI, Kolkata[cite: 1].</li>
+                <li style="margin-bottom: 0.75rem;"><strong>Best Oral Presentation Award (2025)</strong>, ICMR & National Institute of Virology (VIROCON-2025), Nagpur[cite: 1].</li>
+                <li style="margin-bottom: 0.75rem;"><strong>Best Poster Presentation Award (2024)</strong>, Indian Phytopathological Society National Conference, ICAR-IISR, Lucknow[cite: 1].</li>
+            </ul>
+        </section>
+
+    </main>
+</body>
+</html>
